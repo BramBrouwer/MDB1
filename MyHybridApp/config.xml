@@ -1,16 +1,7 @@
-<!--Plugin activeren, aangeven waar splashcreen staat en splashcreen in res folder zetten
-<widget xmlns:gap"http://phonegap.com/ns/1.0">
-<gap:splash src="res/screen/splash.jpg">
-<gap:splash name="splashcreen" value="screen">-->
-<!--</widget>-->
-
-
-
-
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.myhybridapp" version="1.0.0">
   <name>MyHybridApp</name>
-  <description>Hello World sample application that responds to the deviceready event.</description>
-  <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
+  <description>Nacho timeeee !</description>
+  <author href="bram brouwer" email=".">PhoneGap Team</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="default"/>
@@ -42,10 +33,10 @@
   <gap:plugin name="org.apache.cordova.globalization"/>
   <gap:plugin name="org.apache.cordova.inappbrowser"/>
   <gap:plugin name="org.apache.cordova.media"/>
-  <gap:plugin name="org.apache.cordova.network-information"/>
+  <!--<gap:plugin name="org.apache.cordova.network-information"/>-->
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <icon src="www/res/icon/icon.png"/>
+  <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
   <icon src="www/res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
