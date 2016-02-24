@@ -33,28 +33,57 @@
     
     
     
-    <body> 
-<div data-role="page" id="pageone">
+<body> 
+
+
+<div data-role="page" id="pageone" data-url="pageone">
+
+ <div data-role="header">
+    <h3>Welcome To Nacho Time</h3>
+ </div>
+
  <div data-role="main" class="ui-content">
     <h2>Choose a category:</h2>
    
     <ul data-role="listview" data-inset="true">
-      <li><a href="#">List Item</a></li>
-      <li><a href="#">List Item</a></li>
-      <li><a href="#">List Item</a></li>
+     <li>
+        <a href="#moviepage" data-transition="slide"><img src="img/movie_icon.jpg">
+        <h2>Movies</h2>
+        <p>Watch free movies (while eating nachos)</p>
+        </a>
+      </li>
+  
+     <li>
+        <a href="#seriespage" data-transition="slide"><img src="img/serie_icon.png">
+        <h2>Movies</h2>
+        <p>Watch free series (while eating nachos)</p>
+        </a>
+      </li>
+
+     <li>
+        <a href="#cartoonpage" data-transition="slide"><img src="img/cartoon_icon.png">
+        <h2>Cartoons</h2>
+        <p>Watch free cartoons (while eating nachos)</p>
+        </a>
+      </li>
     </ul>
-    
   </div>
+  
 </div> 
+
+<div data-role="page" id="moviepage" data-url="moviepage">
+     <h1>Movies</h1>
+</div>
    
-              
+         <!--De manier van linken via mbv de data-ids werkt toch alleen als de html in dezelfde files staat? 
+         Als ze in andere bestanden staan krijg ik iedere keer dezelfde error-->
               
         <!--Scripts-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-
+        <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
