@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
     Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
@@ -36,11 +37,11 @@
     
 <body> 
 
-
+<!--Home page-->
 <div data-role="page" id="pageone" data-url="pageone">
 
  <div data-role="header">
-    <h3>Welcome To Nacho Time</h3>
+    <h3>Nacho Time</h3>
  </div>
 
  <div data-role="main" class="ui-content">
@@ -50,42 +51,59 @@
      <li>
         <a href="#moviepage" data-transition="slide"><img src="img/movie_icon.jpg">
         <h2>Movies</h2>
-        <p>Watch free movies (while eating nachos)</p>
+        <p>Watch free movies</p>
         </a>
       </li>
   
      <li>
         <a href="#seriespage" data-transition="slide"><img src="img/serie_icon.png">
-        <h2>Movies</h2>
-        <p>Watch free series (while eating nachos)</p>
+        <h2>Series</h2>
+        <p>Watch free series </p>
         </a>
       </li>
 
      <li>
         <a href="#cartoonpage" data-transition="slide"><img src="img/cartoon_icon.png">
         <h2>Cartoons</h2>
-        <p>Watch free cartoons (while eating nachos)</p>
+        <p>Watch free cartoons </p>
         </a>
       </li>
     </ul>
   </div>
   
 </div> 
+<!--End home page-->
 
+<!--Movie page-->
 <div data-role="page" id="moviepage" data-url="moviepage">
-     <h1>Movies</h1>
+     
+  <div data-role="header">
+    <h1>Movies</h1>
+    <a href="#" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left">Search</a>
+  </div>
+     
+</div>
+<!--End Movie page-->
+
+<div data-role="page" id="" data-url="seriespage">
+   
+  <div data-role="header">
+    <h1>Series</h1>
+    <a href="#" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left">Search</a>
+  </div>
+  
 </div>
 
-<div data-role="page" id="moviepage" data-url="seriespage">
-     <h1>Movies</h1>
-</div>
-
-<div data-role="page" id="moviepage" data-url="cartoonpage">
-     <h1>Movies</h1>
+<div data-role="page" id="" data-url="cartoonpage">
+   
+   <div data-role="header">
+    <h1>Series</h1>
+    <a href="#" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left">Search</a>
+   </div>
+   
 </div>
    
-         <!--De manier van linken via mbv de data-ids werkt toch alleen als de html in dezelfde files staat? 
-         Als ze in andere bestanden staan krijg ik iedere keer dezelfde error-->
+       
               
         <!--Scripts-->
         <script type="text/javascript" src="cordova.js"></script>
