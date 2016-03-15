@@ -1,4 +1,13 @@
+
+// $( document ).ready(function() {
+   
+// });
+
 $('#target').submit(function() {
-  console.log('submin handler called');
+  console.log('submit handler called');
+  console.log("Summoner name 1 = " + $('input[name="s1"]').val());
+  console.log("Summoner name 2 = " + $('input[name="s2"]').val());
+  
+//   Return false zodat de action niet aangeroepen word, dit wordt straks een verwijzing naar de volgende stap van het submitten
   return false;
 });
