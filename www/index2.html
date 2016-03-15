@@ -21,12 +21,12 @@
 <!--Home page-->
 <div data-role="page" id="homepage" data-url="homepage">
     <div data-role="header">
-    <h1>Compare yo self</h1>
-    <a type="button" href="index2.html">go</a>
+    <h1>LoL API test</h1>
+    <button onclick="getSummonerData('SalamiBami', 'euw')">go</a>
   </div>
   
    <div data-role="main" class="ui-content">
-    <p>Enter 2 summoner names to compare stats:</p>
+       <div class="name" id="name"></div>
   </div>
 
  
@@ -41,8 +41,10 @@
         <!--Scripts-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/API.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
