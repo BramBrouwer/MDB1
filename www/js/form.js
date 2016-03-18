@@ -1,11 +1,7 @@
 // TODO disable knop tijdens ajax call
-
-
 //Ajax start and stop listeners to show/hide loader
 $( document ).ajaxStart(function() {
-
  $('#loader').show();
- 
 });
 
 $( document ).ajaxStop(function() {
