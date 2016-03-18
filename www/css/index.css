@@ -25,7 +25,11 @@
     margin-right: 10%;
     margin-left: 10%;
 }*/
-
+.header_icon{
+    width: 30px;
+    float:left;
+    /*display:inline*/
+}
 .popup_text{
     color: darkred;
     font-weight: bold;
