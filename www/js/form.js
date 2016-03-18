@@ -1,6 +1,11 @@
+// TODO disable knop tijdens ajax call
+
+
 //Ajax start and stop listeners to show/hide loader
 $( document ).ajaxStart(function() {
+
  $('#loader').show();
+ 
 });
 
 $( document ).ajaxStop(function() {
@@ -55,6 +60,7 @@ $('#target').submit(function() {
                     console.log('Second summoner name verified');
                     summoner2 = data2;
                     console.log(summoner2);
+                    succes_message();
                     // Both names verified
                     //TODO pass names to next step, confirm name validation
                     // Both names verified
@@ -65,8 +71,7 @@ $('#target').submit(function() {
                     console.log(error);
                     errorpopup(name_2);
                     }
-                  
-                  
+
                   });
          
                 },
@@ -100,6 +105,13 @@ function empty_name_error(){
     $("#popupcontent").empty();
     $("#popupcontent").append('Please enter both fields');
     $( "#name_error" ).popup( "open");
+}
+
+
+
+function succes_message(){
+  
+    $( "#success_popup" ).popup( "open");
 }
 
 
