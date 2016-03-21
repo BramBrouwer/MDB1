@@ -10,6 +10,7 @@ shake.stopWatch();
 
 var onShake = function () {
   // Fired when a shake is detected
+  alert('meme');
  console.log('shake detected');
  
 };
