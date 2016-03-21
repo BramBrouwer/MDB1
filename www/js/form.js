@@ -1,4 +1,7 @@
-
+$(document).ready(function() {
+    
+    
+ });
 //Function vairables
  var baseURL = 'https://euw.api.pvp.net';
  var APIKey = 'api_key=15dfe91d-08ef-4fc9-a622-8d76c79c1ec5';
@@ -7,8 +10,9 @@
 //  console.log(summoner2[name_2]);
 
 $('#target').submit(function() {
- 
- 
+  //    Disable button to prevent the user breaking stuff
+      $('input[type="submit"]').prop('disabled', true);
+    
  var summoner1;
  var summoner2;
  
@@ -21,9 +25,12 @@ $('#target').submit(function() {
    if(name_1 == "" || name_2 == "")
    {
        empty_name_error();
+        $('input[type="submit"]').prop('disabled', false);
        return false;
    }
+        
        $('#loader').show();
+   
        //first ajax call, verify the first summoner name given
          $.ajax({
             url: baseURL+typeURL1, 
@@ -32,7 +39,7 @@ $('#target').submit(function() {
                 //First name verified
                 console.log('First summoner name verified');
                 summoner1 = data1;
-                console.log(summoner1);
+              
                 
                 //second ajax call, verify second name
                   $.ajax({
@@ -42,12 +49,11 @@ $('#target').submit(function() {
                     //Second name verified
                     console.log('Second summoner name verified');
                     summoner2 = data2;
-                    console.log(summoner2);
-                    succes_message();
+                    $('input[type="submit"]').prop('disabled', false);
+
                     
                     // Both names verified
                   $('#loader').hide();
-                
                   $( ":mobile-pagecontainer" ).pagecontainer( "change", "compare.html", { role: "page" } );
                    getstatsnormal(summoner1,summoner2,name_1,name_2);
 
@@ -59,6 +65,7 @@ $('#target').submit(function() {
                     console.log(error);
                      $('#loader').hide();
                     errorpopup(name_2);
+                    $('input[type="submit"]').prop('disabled', false);
                     
                     }
 
@@ -71,6 +78,7 @@ $('#target').submit(function() {
                 console.log(error);
                  $('#loader').hide();
                 errorpopup(name_1);
+                $('input[type="submit"]').prop('disabled', false);
 
                 }
               
