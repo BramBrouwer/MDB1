@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 $(document).ready(function() {
     
     
@@ -158,16 +156,64 @@ function getstatsnormal(sum1,sum2,name1,name2){
 
 // CalculateStats
 function calculateStats(summonerstats){
-      
+    console.log(summonerstats);
+    var stats = [];
+    summonerstats.forEach(function(entry){
+        switch(entry['playerStatSummaryType']) { //Set stats
+            case 'CoopVsAI':
+                var coopvsai = entry['aggregatedStats'];
+                stats[0] = coopvsai;
+                break;
+            case 'OdinUnranked':
+                break;
+            case 'RankedTeam3x3':
+                var ranked3 = entry['aggregatedStats'];
+                stats[2] = ranked3;
+                break;
+            case 'RankedTeam5x5':
+                var ranked5 = entry['aggregatedStats'];
+                stats[3] = ranked5;
+                break;
+            case 'Unranked3x3':
+                var unranked3 = entry['aggregatedStats'];
+                stats[4] = unranked3;
+                break;
+            case 'CAP5x5':
+                var teambuilder = entry['aggregatedStats'];
+                stats[5] = teambuilder;
+                break;
+            case 'AramUnranked5x5':
+                var aram = entry['aggregatedStats'];
+                stats[6] = aram;
+                break;
+            case 'Unranked':
+                var unranked = entry['aggregatedStats'];
+                console.log(unranked);
+                stats[7] = unranked;
+                break;
+            case 'RankedSolo5x5':
+                var rankedsolo = entry['aggregatedStats'];
+                stats[8] = rankedsolo;
+                break;
+            default:
+                
+                break;
+        }
+    });
+
+    setStatTable();
+    
+}
+
+function setStatTable(){
+    
+}
 //   CAP 5x5 + unranked + 3v3 undraked = totale normal stats
 // 			-Creep score 
 // 			-championkills
 // 			-assists
 // 			-turrets killed
 // 			-wins
-
-    console.log(summonerstats);
-}
 
 
 
@@ -199,9 +245,3 @@ function succes_message(){
     $( "#success_popup" ).popup( "open");
 }
 // End Popups
-
-
-
-
-
->>>>>>> refs/remotes/origin/master
