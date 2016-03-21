@@ -288,3 +288,33 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+/* Table */
+.stats_table {
+    border-collapse: collapse;
+    border: 2px solid red;
+}
+.stats_table tbody .first {
+    border-right: 2px solid red;
+    border-bottom: 1px solid red;
+}
+.stats_table thead{
+    border: 1px solid red;
+    width: 100%;
+}
+.stats_table thead th[id^='sum']{
+    border-right: 2px solid red;
+    border-left: 2px solid red;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.stats_table thead th:not([id^='sum']) {
+    
+}
+.stats_table tbody td:not([class^='first']){
+    text-align: center;
+    border-bottom: 2px solid red;
+    padding-right: 5px;
+    padding-left: 5px;
+}
