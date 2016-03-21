@@ -9,7 +9,6 @@ function Connection(){
     this.getSummonerData = function(name){
         var returnData;
         $.ajax({
-            async: false,
             url: baseURL + '/api/lol/' + region + '/v1.4/summoner/by-name/' + name +'?' +APIKey, 
                 success: function(data){
                     returnData = data;
