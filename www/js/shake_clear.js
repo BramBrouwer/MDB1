@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    alert('test');
+    // alert('test');
     // Start watching for shake gestures and call "onShake"
 // with a shake sensitivity of 40 (optional, default 30)
-shake.startWatch(onShake, 40 ,onError);
+shake.startWatch(onShake);
 
 // Stop watching for shake gestures
 shake.stopWatch();
@@ -15,7 +15,5 @@ var onShake = function () {
  
 };
 
-var onError = function () {
-  // Fired when there is an accelerometer error (optional)
-};
+
 
