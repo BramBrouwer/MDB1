@@ -10,6 +10,7 @@ $(document).ready(function() {
 //  console.log(summoner2[name_2]);
 
 $('#target').submit(function() {
+    $('.stats_table').hide();
   //    Disable button to prevent the user breaking stuff
       $('input[type="submit"]').prop('disabled', true);
     
@@ -53,8 +54,8 @@ $('#target').submit(function() {
 
                     
                     // Both names verified
-                  $('#loader').hide();
-                  $( ":mobile-pagecontainer" ).pagecontainer( "change", "compare.html", { role: "page" } );
+                  
+                  //$( ":mobile-pagecontainer" ).pagecontainer( "change", "compare.html", { role: "page" } );
                    getstatsnormal(summoner1,summoner2,name_1,name_2);
 
                     
@@ -105,109 +106,184 @@ function getstatsnormal(sum1,sum2,name1,name2){
 //  console.log(sum2[name2]);
   var typeURL1 = '/api/lol/' + region + '/v1.3/stats/by-summoner/' + sum1[name1].id +'/summary?season=SEASON2016&'+APIKey;
   var typeURL2 = '/api/lol/' + region + '/v1.3/stats/by-summoner/' + sum2[name2].id +'/summary?season=SEASON2016&'+APIKey;
- 
-                  $.ajax({
-                  url: baseURL+typeURL1, 
-                  success: function(data1)
-                   {
-                    
-                    summoner1stats = data1;
-                    console.log(summoner1stats);
-                    
-                      $.ajax({
-                  url: baseURL+typeURL2, 
-                  success: function(data2)
-                   {
-                    
-                    summoner2stats = data2;
-                    // console.log(summoner2stats.playerStatSummaries);
-                    calculateStats(summoner2stats.playerStatSummaries);
+    $.ajax({
+        url: baseURL+typeURL1, 
+        success: function(data1)
+        {           
+            summoner1stats = data1['playerStatSummaries'];
+            summoner1stats['name'] = name1;
+            $.ajax({
+                url: baseURL+typeURL2, 
+                success: function(data2)
+                {    
+                    summoner2stats = data2['playerStatSummaries'];
+                    summoner2stats['name'] = name2;
+                    calculateStats(summoner1stats, summoner2stats);
                     //beide summoners opgehaald
-                    
-                    
-                  },
-                 
-                   error : function(error) 
-                    {
+                }, 
+                error : function(error) 
+                {
                     console.log(error);
-                    
-                    
-                    }
-
-                  });
-                    
-                    
-                  },
-                 
-                   error : function(error) 
-                    {
-                    console.log(error);
-                    
-                    
-                    }
-
-                  });
-
-
+                }
+            });             
+        },         
+        error : function(error) 
+        {
+            console.log(error);        
+        }
+    });
+    
 }
 
 
 
 
 // CalculateStats
-function calculateStats(summonerstats){
-    console.log(summonerstats);
-    var stats = [];
-    summonerstats.forEach(function(entry){
+function calculateStats(sum1stats, sum2stats){
+    var stats = {'sum1Name': sum1stats['name'], 'sum2Name': sum2stats['name'], 'Unranked': null }
+    
+/* Summoner 1 */
+    var sum1unrankedStats = { 'CS': 0, 'Champion_Kills': 0, 'Assists': 0, 'Turret_Kills': 0, 'Wins': 0 };
+    sum1stats.forEach(function(entry){
         switch(entry['playerStatSummaryType']) { //Set stats
             case 'CoopVsAI':
                 var coopvsai = entry['aggregatedStats'];
-                stats[0] = coopvsai;
                 break;
             case 'OdinUnranked':
                 break;
             case 'RankedTeam3x3':
                 var ranked3 = entry['aggregatedStats'];
-                stats[2] = ranked3;
                 break;
             case 'RankedTeam5x5':
                 var ranked5 = entry['aggregatedStats'];
-                stats[3] = ranked5;
                 break;
             case 'Unranked3x3':
                 var unranked3 = entry['aggregatedStats'];
-                stats[4] = unranked3;
+                sum1unrankedStats['CS'] += unranked3['totalMinionKills'];
+                sum1unrankedStats['CS'] += unranked3['totalNeutralMinionsKilled'];
+                sum1unrankedStats['Champion_Kills'] += unranked3['totalChampionKills'];
+                sum1unrankedStats['Assists'] += unranked3['totalAssists'];
+                sum1unrankedStats['Turret_Kills'] += unranked3['totalTurretsKilled'];
+                sum1unrankedStats['Wins'] += entry['wins'];
                 break;
             case 'CAP5x5':
                 var teambuilder = entry['aggregatedStats'];
-                stats[5] = teambuilder;
+                sum1unrankedStats['CS'] += teambuilder['totalMinionKills'];
+                sum1unrankedStats['CS'] += teambuilder['totalNeutralMinionsKilled'];
+                sum1unrankedStats['Champion_Kills'] += teambuilder['totalChampionKills'];
+                sum1unrankedStats['Assists'] += teambuilder['totalAssists'];
+                sum1unrankedStats['Turret_Kills'] += teambuilder['totalTurretsKilled'];
+                sum1unrankedStats['Wins'] += entry['wins'];
                 break;
             case 'AramUnranked5x5':
                 var aram = entry['aggregatedStats'];
-                stats[6] = aram;
                 break;
             case 'Unranked':
                 var unranked = entry['aggregatedStats'];
-                console.log(unranked);
-                stats[7] = unranked;
+                sum1unrankedStats['CS'] += unranked['totalMinionKills'];
+                sum1unrankedStats['CS'] += unranked['totalNeutralMinionsKilled'];
+                sum1unrankedStats['Champion_Kills'] += unranked['totalChampionKills'];
+                sum1unrankedStats['Assists'] += unranked['totalAssists'];
+                sum1unrankedStats['Turret_Kills'] += unranked['totalTurretsKilled'];
+                sum1unrankedStats['Wins'] += entry['wins'];
                 break;
             case 'RankedSolo5x5':
                 var rankedsolo = entry['aggregatedStats'];
-                stats[8] = rankedsolo;
                 break;
             default:
                 
                 break;
         }
     });
+/* Summoner 1 END */
 
-    setStatTable();
+/* Summoner 2 */
+    var sum2unrankedStats = { 'CS': 0, 'Champion_Kills': 0, 'Assists': 0, 'Turret_Kills': 0, 'Wins': 0 }; 
+        sum2stats.forEach(function(entry){
+        switch(entry['playerStatSummaryType']) { //Set stats
+            case 'CoopVsAI':
+                var coopvsai = entry['aggregatedStats'];
+                break;
+            case 'OdinUnranked':
+                break;
+            case 'RankedTeam3x3':
+                var ranked3 = entry['aggregatedStats'];
+                break;
+            case 'RankedTeam5x5':
+                var ranked5 = entry['aggregatedStats'];
+                break;
+            case 'Unranked3x3':
+                var unranked3 = entry['aggregatedStats'];
+                sum2unrankedStats['CS'] += unranked3['totalMinionKills'];
+                sum2unrankedStats['CS'] += unranked3['totalNeutralMinionsKilled'];
+                sum2unrankedStats['Champion_Kills'] += unranked3['totalChampionKills'];
+                sum2unrankedStats['Assists'] += unranked3['totalAssists'];
+                sum2unrankedStats['Turret_Kills'] += unranked3['totalTurretsKilled'];
+                sum2unrankedStats['Wins'] += entry['wins'];
+                break;
+            case 'CAP5x5':
+                var teambuilder = entry['aggregatedStats'];
+                sum2unrankedStats['CS'] += teambuilder['totalMinionKills'];
+                sum2unrankedStats['CS'] += teambuilder['totalNeutralMinionsKilled'];
+                sum2unrankedStats['Champion_Kills'] += teambuilder['totalChampionKills'];
+                sum2unrankedStats['Assists'] += teambuilder['totalAssists'];
+                sum2unrankedStats['Turret_Kills'] += teambuilder['totalTurretsKilled'];
+                sum2unrankedStats['Wins'] += entry['wins'];
+                break;
+            case 'AramUnranked5x5':
+                var aram = entry['aggregatedStats'];
+                break;
+            case 'Unranked':
+                var unranked = entry['aggregatedStats'];
+                sum2unrankedStats['CS'] += unranked['totalMinionKills'];
+                sum2unrankedStats['CS'] += unranked['totalNeutralMinionsKilled'];
+                sum2unrankedStats['Champion_Kills'] += unranked['totalChampionKills'];
+                sum2unrankedStats['Assists'] += unranked['totalAssists'];
+                sum2unrankedStats['Turret_Kills'] += unranked['totalTurretsKilled'];
+                sum2unrankedStats['Wins'] += entry['wins'];
+                break;
+            case 'RankedSolo5x5':
+                var rankedsolo = entry['aggregatedStats'];
+                break;
+            default:
+                
+                break;
+        }
+    });
+/* Summoner 2 END */ 
     
+    $('#loader').hide();    
+    $('.stats_table').show();
+    stats['Unranked1'] = sum1unrankedStats;
+    stats['Unranked2'] = sum2unrankedStats;
+    setStatTable(stats);
 }
 
-function setStatTable(){
+function setStatTable(stats){
+    var unranked1 = stats['Unranked1'];
+    var unranked2 = stats['Unranked2'];
+
+            $('.stats_table thead #sum1').append(stats['sum1Name']);
+            $('.stats_table tbody #CS .sum1').append(unranked1['CS']);
+            $('.stats_table tbody #Champion_Kills .sum1').append(unranked1['Champion_Kills']);
+            $('.stats_table tbody #Assists .sum1').append(unranked1['Assists']);
+            $('.stats_table tbody #Turret_Kills .sum1').append(unranked1['Turret_Kills']);
+            $('.stats_table tbody #Wins .sum1').append(unranked1['Wins']);
+
+            $('.stats_table thead #sum2').append(stats['sum2Name']);
+            $('.stats_table tbody #CS .sum2').append(unranked2['CS']);
+            $('.stats_table tbody #Champion_Kills .sum2').append(unranked2['Champion_Kills']);
+            $('.stats_table tbody #Assists .sum2').append(unranked2['Assists']);
+            $('.stats_table tbody #Turret_Kills .sum2').append(unranked2['Turret_Kills']);
+            $('.stats_table tbody #Wins .sum2').append(unranked2['Wins']);
+
+    }
+
+
     
-}
+
+
+
 //   CAP 5x5 + unranked + 3v3 undraked = totale normal stats
 // 			-Creep score 
 // 			-championkills
