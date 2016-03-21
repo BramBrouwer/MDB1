@@ -29,13 +29,13 @@
 
 
 .popup_text{
-    color: darkred;
+    /*color: darkred;*/
     font-weight: bold;
     font-size: x-large;
 }
 
 .success_popup{
-    color: darkgreen;
+    /*color: darkgreen;*/
     font-weight: bold;
     font-size: x-large;
 }

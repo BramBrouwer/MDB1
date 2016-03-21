@@ -59,7 +59,8 @@ $('#target').submit(function() {
                     succes_message();
                     // Both names verified
                     //TODO pass names to next step, confirm name validation
-                    // Both names verified
+
+                    
                   },
                   //Second name 404
                    error : function(error) 
