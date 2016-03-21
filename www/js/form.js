@@ -1,22 +1,9 @@
-// TODO disable knop tijdens ajax call
-//Ajax start and stop listeners to show/hide loader
-$( document ).ajaxStart(function() {
- $('#loader').show();
-});
-
-$( document ).ajaxStop(function() {
- $('#loader').hide();
-
-});
 
 
 // get name example
 //  console.log(summoner2[name_2]);
 
 $('#target').submit(function() {
-   
- 
- 
  
  //Function vairables
  var baseURL = 'https://euw.api.pvp.net';
@@ -36,7 +23,7 @@ $('#target').submit(function() {
        empty_name_error();
        return false;
    }
-
+       $('#loader').show();
        //first ajax call, verify the first summoner name given
          $.ajax({
             url: baseURL+typeURL1, 
@@ -57,8 +44,11 @@ $('#target').submit(function() {
                     summoner2 = data2;
                     console.log(summoner2);
                     succes_message();
+                    
                     // Both names verified
-                    //TODO pass names to next step, confirm name validation
+                  $('#loader').hide();
+                  $( ":mobile-pagecontainer" ).pagecontainer( "change", "compare.html", { role: "page" } );
+                   getstatsnormal(summoner1,summoner2);
 
                     
                   },
@@ -66,7 +56,9 @@ $('#target').submit(function() {
                    error : function(error) 
                     {
                     console.log(error);
+                     $('#loader').hide();
                     errorpopup(name_2);
+                    
                     }
 
                   });
@@ -76,6 +68,7 @@ $('#target').submit(function() {
                 error : function(error) 
                 {
                 console.log(error);
+                 $('#loader').hide();
                 errorpopup(name_1);
 
                 }
@@ -86,6 +79,28 @@ $('#target').submit(function() {
 })
 
 
+
+
+// Get stats
+
+
+
+
+
+// End get stats
+function getstatsnormal(sum1,sum2){
+// TODO retrieve both summer stats and log to console
+
+}
+
+
+
+
+
+
+
+
+// Popups
 function errorpopup(invalidName)
 {
     //first empty the containers text
@@ -110,6 +125,7 @@ function succes_message(){
   
     $( "#success_popup" ).popup( "open");
 }
+// End Popups
 
 
 
