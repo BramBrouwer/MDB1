@@ -1,0 +1,14 @@
+Deadline - 3 april
+http://cordova.apache.org/docs/en/latest/cordova/events/events.html
+
+TODO:
+- disable button tijdens het loaden
+- native functies
+- Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
+-Performance check mbv laatste slides
+-rubrix doornemen
+
+Nice to have:
+-season kiezen
+-region kiezen
+-ranked of normal kiezen

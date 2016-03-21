@@ -148,6 +148,14 @@ function getstatsnormal(sum1,sum2,name1,name2){
 
 // CalculateStats
 function calculateStats(summonerstats){
+      
+//   CAP 5x5 + unranked + 3v3 undraked = totale normal stats
+// 			-Creep score 
+// 			-championkills
+// 			-assists
+// 			-turrets killed
+// 			-wins
+
     console.log(summonerstats);
 }
 
@@ -175,13 +183,6 @@ function empty_name_error(){
 
 
 function succes_message(){
-  
-//   CAP 5x5 + unranked + 3v3 undraked = totale normal stats
-// 			-Creep score 
-// 			-championkills
-// 			-assists
-// 			-turrets killed
-// 			-wins
 
 
 
