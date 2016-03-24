@@ -263,19 +263,19 @@ function setStatTable(stats){
     var unranked1 = stats['Unranked1'];
     var unranked2 = stats['Unranked2'];
 
-            $('.stats_table thead #sum1').append(stats['sum1Name']);
-            $('.stats_table tbody #CS .sum1').append(unranked1['CS']);
-            $('.stats_table tbody #Champion_Kills .sum1').append(unranked1['Champion_Kills']);
-            $('.stats_table tbody #Assists .sum1').append(unranked1['Assists']);
-            $('.stats_table tbody #Turret_Kills .sum1').append(unranked1['Turret_Kills']);
-            $('.stats_table tbody #Wins .sum1').append(unranked1['Wins']);
+            $('.stats_table thead #sum1').text(stats['sum1Name']);
+            $('.stats_table tbody #CS .sum1').text(unranked1['CS']);
+            $('.stats_table tbody #Champion_Kills .sum1').text(unranked1['Champion_Kills']);
+            $('.stats_table tbody #Assists .sum1').text(unranked1['Assists']);
+            $('.stats_table tbody #Turret_Kills .sum1').text(unranked1['Turret_Kills']);
+            $('.stats_table tbody #Wins .sum1').text(unranked1['Wins']);
 
-            $('.stats_table thead #sum2').append(stats['sum2Name']);
-            $('.stats_table tbody #CS .sum2').append(unranked2['CS']);
-            $('.stats_table tbody #Champion_Kills .sum2').append(unranked2['Champion_Kills']);
-            $('.stats_table tbody #Assists .sum2').append(unranked2['Assists']);
-            $('.stats_table tbody #Turret_Kills .sum2').append(unranked2['Turret_Kills']);
-            $('.stats_table tbody #Wins .sum2').append(unranked2['Wins']);
+            $('.stats_table thead #sum2').text(stats['sum2Name']);
+            $('.stats_table tbody #CS .sum2').text(unranked2['CS']);
+            $('.stats_table tbody #Champion_Kills .sum2').text(unranked2['Champion_Kills']);
+            $('.stats_table tbody #Assists .sum2').text(unranked2['Assists']);
+            $('.stats_table tbody #Turret_Kills .sum2').text(unranked2['Turret_Kills']);
+            $('.stats_table tbody #Wins .sum2').text(unranked2['Wins']);
 
     }
 
@@ -312,12 +312,11 @@ function empty_name_error(){
     $( "#name_error" ).popup( "open");
 }
 
-
-
 function succes_message(){
-
-
-
     $( "#success_popup" ).popup( "open");
 }
 // End Popups
+
+$('tr').on("touchstart"), function(){
+    $(this).addClass('selected');
+};

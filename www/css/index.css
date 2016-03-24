@@ -292,19 +292,22 @@ h1 {
 /* Table */
 .stats_table {
     border-collapse: collapse;
-    border: 2px solid red;
+    background-color: #2D2D2D;
+    text-shadow: 0 1px 0 #111;
+    width: 100%;
+    border: 2px solid #1d1d1d;
 }
 .stats_table tbody .first {
-    border-right: 2px solid red;
-    border-bottom: 1px solid red;
+    border-right: 2px solid #1d1d1d;
+    border-bottom: 2px solid #1d1d1d;
 }
 .stats_table thead{
-    border: 1px solid red;
+    border-bottom: 2px solid #1d1d1d;
     width: 100%;
 }
 .stats_table thead th[id^='sum']{
-    border-right: 2px solid red;
-    border-left: 2px solid red;
+    border-right: 2px solid #1d1d1d;
+    border-left: 2px solid #1d1d1d;
     text-align: center;
     padding-right: 5px;
     padding-left: 5px;
@@ -314,7 +317,10 @@ h1 {
 }
 .stats_table tbody td:not([class^='first']){
     text-align: center;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #1d1d1d;
     padding-right: 5px;
     padding-left: 5px;
+}
+.selected{
+    background-color: red;
 }
