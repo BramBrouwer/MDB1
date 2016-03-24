@@ -322,5 +322,12 @@ h1 {
     padding-left: 5px;
 }
 .selected{
-    background-color: red;
+    background-color: #3D3D3D;
+}
+.winner{
+    color: green;
+    font-weight: bold;
+}
+.loser{
+    color: red;
 }

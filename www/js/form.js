@@ -317,6 +317,44 @@ function succes_message(){
 }
 // End Popups
 
-$('tr').on("touchstart"), function(){
-    $(this).addClass('selected');
-};
+function redrawScore(){
+    var score = $('.stats_table thead #score');
+    var sum1score = $('td.sum1.winner');
+    var sum2score = $('td.sum2.winner');
+    var sum1name = $('thead #sum1');
+    var sum2name = $('thead #sum2');    
+    
+    score.text('Score: ' + sum1score.size() + ' - ' + sum2score.size());
+    if(sum1score.size() > sum2score.size() && !sum1name.hasClass('winner')){
+        sum1name.toggleClass('winner');
+        sum2name.toggleClass('loser');
+    }
+    else  if(sum2score.size() > sum1score.size() && !sum2name.hasClass('winner')){
+        sum2name.toggleClass('winner');
+        sum1name.toggleClass('loser');
+    }
+    else if(sum2score.size() == sum1score.size()){
+        sum1name.removeClass('winner');
+        sum2name.removeClass('winner');
+        sum1name.removeClass('loser');
+        sum2name.removeClass('loser');
+    }
+}
+
+$('tbody tr').on('touchstart', function(){
+    var row = $(this);
+    var sum1cell = row.find('td.sum1');
+    var sum2cell = row.find('td.sum2');
+    
+    if(sum1cell.text() == Math.max(sum1cell.text(), sum2cell.text())){
+        sum1cell.toggleClass('winner');
+        sum2cell.toggleClass('loser');
+    }
+    else if(sum2cell.text() == Math.max(sum1cell.text(), sum2cell.text())){
+        sum2cell.toggleClass('winner');
+        sum1cell.toggleClass('loser');
+    }
+    row.toggleClass('selected');
+    redrawScore();
+
+});
