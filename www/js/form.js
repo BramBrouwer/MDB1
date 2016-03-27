@@ -11,7 +11,7 @@ var name1 = '';
 var name2 = '';
 
 $('#target').submit(function() {
-    StatusBar.backgroundColorByName("red");
+    StatusBar.show();
     $('.stats_table').hide();
     $('#loader').show();
     resetScore();
