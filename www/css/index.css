@@ -288,3 +288,46 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+/* Table */
+.stats_table {
+    border-collapse: collapse;
+    background-color: #2D2D2D;
+    text-shadow: 0 1px 0 #111;
+    width: 100%;
+    border: 2px solid #1d1d1d;
+}
+.stats_table tbody .first {
+    border-right: 2px solid #1d1d1d;
+    border-bottom: 2px solid #1d1d1d;
+}
+.stats_table thead{
+    border-bottom: 2px solid #1d1d1d;
+    width: 100%;
+}
+.stats_table thead th[id^='sum']{
+    border-right: 2px solid #1d1d1d;
+    border-left: 2px solid #1d1d1d;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.stats_table thead th:not([id^='sum']) {
+    
+}
+.stats_table tbody td:not([class^='first']){
+    text-align: center;
+    border-bottom: 2px solid #1d1d1d;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.selected{
+    background-color: #3D3D3D;
+}
+.winner{
+    color: green;
+    font-weight: bold;
+}
+.loser{
+    color: red;
+}

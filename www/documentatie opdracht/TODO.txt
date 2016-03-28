@@ -7,7 +7,7 @@ TODO:
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
 -Performance check mbv laatste slides
 -rubrix doornemen
-
+-foutmelding bij geen internet
 Nice to have:
 -season kiezen
 -region kiezen
