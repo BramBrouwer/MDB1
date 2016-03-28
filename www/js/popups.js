@@ -1,9 +1,27 @@
-$( "#header_icon" ).on( "tap", function( event ) {
-    
-   var ref = window.open('http://leagueoflegends.com', '_blank', 'location=yes');
 
-    
-} )
+var sites = 
+["http://ducksarethebest.com/",
+"http://www.staggeringbeauty.com/",
+"http://beesbeesbees.com/",
+"http://www.koalastothemax.com/",
+"http://hasthelargehadroncolliderdestroyedtheworldyet.com/",
+"http://iamawesome.com/",
+"http://www.nullingthevoid.com/",
+"http://www.wwwdotcom.com/",
+"http://unicodesnowmanforyou.com/"]
+
+
+function getRandomInt() {
+    return Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+}
+
+$( "#header_icon" ).on( "tap", function( event ) {
+       var ref = window.open('http://leagueoflegends.com', '_blank', 'location=yes');
+})
+
+$( "#dontmindme" ).on( "tap", function( event ) {
+       var ref = window.open(sites[getRandomInt()], '_blank', 'location=yes');
+    })
 
 
 
