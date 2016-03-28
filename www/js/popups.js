@@ -1,3 +1,11 @@
+$( "#header_icon" ).on( "tap", function( event ) {
+    
+   var ref = window.open('http://leagueoflegends.com', '_blank', 'location=yes');
+
+    
+} )
+
+
 
 function errorpopup(invalidName)
 {
