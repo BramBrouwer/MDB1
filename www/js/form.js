@@ -8,6 +8,12 @@ var name1 = '';
 var name2 = '';
 
 $('#target').submit(function() {
+    
+    
+//   var ref = window.open('http://apache.org', '_blank', 'location=yes');
+  var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+
+    
     // StatusBar.show();
     // StatusBar.backgroundColorByName("red");
     $('.stats_table').hide();
