@@ -1,10 +1,14 @@
-$("#loadcontacts").tap(function() {
-    $("#loadcontacts").hide();
+$( document ).on( "pageinit", "#contactspage", function( event ) {
     $( "#contactslist" ).hide();
     $( "#contactsloader" ).show();
     var fields = ["displayName", "name","phoneNumbers"];
-    navigator.contacts.find(fields, onSuccess, onError);            
+    navigator.contacts.find(fields, onSuccess, onError); 
 });
+
+
+
+
+
 
 
 function onSuccess(contacts) 
