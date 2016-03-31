@@ -27,7 +27,7 @@ function onSuccess(contacts)
         for (var i = 0; i < contacts.length; i++) 
         {
             
-                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0].value != null)
+                if(contacts[i].displayName != null && contacts[i].phoneNumbers != null && contacts[i].phoneNumbers[0] != null)
                 {
                         var name = contacts[i].displayName;
                         var phone = contacts[i].phoneNumbers[0].value;
