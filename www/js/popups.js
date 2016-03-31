@@ -1,7 +1,4 @@
 
-
-
-
 var sites = 
 ["http://ducksarethebest.com/",
 "http://www.staggeringbeauty.com/",

@@ -1,10 +1,10 @@
-        $("#loadcontacts").click(function() {
-                $("#loadcontacts").hide();
-                $( "#contactslist" ).hide();
-                $( "#contactsloader" ).show();
-                var fields = ["displayName", "name","phoneNumbers"];
-                navigator.contacts.find(fields, onSuccess, onError);            
-         });
+$("#loadcontacts").tap(function() {
+    $("#loadcontacts").hide();
+    $( "#contactslist" ).hide();
+    $( "#contactsloader" ).show();
+    var fields = ["displayName", "name","phoneNumbers"];
+    navigator.contacts.find(fields, onSuccess, onError);            
+});
 
 
 function onSuccess(contacts) 
