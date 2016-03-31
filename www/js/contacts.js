@@ -3,7 +3,7 @@
 //remove loader and show list on contacts loaded
 $("#loadcontacts").click(function() {
                
-                console.log("contacts called");
+                console.log("contacts called build pls");
                 
                 // Add item
                 $("#contactslist").append('<li><a href="sms://+31612345678?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">AAAAATEST</a></li>');
