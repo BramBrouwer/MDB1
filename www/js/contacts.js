@@ -1,5 +1,5 @@
 
-$("#loadContacts").click(function() {
+$("#loadcontacts").click(function() {
                
                 console.log("contacts called");
                 var fields = ["displayName", "name"];
@@ -18,7 +18,6 @@ $("#loadContacts").click(function() {
             function onSuccess(contacts) {
                 alert("Contacts found: " + contacts.length)
                  for (var i = 0; i < contacts.length; i++) {
-                    //  alert("Display Name = " + contacts[i].displayName);
                      $("contactslist").append($("<li>".text(contacts[i].displayName)));
                  }
                     
