@@ -2,7 +2,7 @@
 http://cordova.apache.org/docs/en/latest/cordova/events/events.html
 
 TODO:
--navigatie naar pagina een ander html bestand
+-add sort functie aan contacts, contacts meteen inladen ipv met een knop
 
 
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
