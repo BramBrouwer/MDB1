@@ -35,6 +35,8 @@ function onSuccess(contacts)
                         $( "#contactslist" ).listview( "refresh" );
                 }      
       }
+    //   if this isnt called and there is still a decent amount of contacts, the for loop probablt crashed, mayb ebecause of a nullpointer on phonenumbers? maybe we should perform the nullcheck on the phonenumber object and not the index.
+    
       alert("is this called?");
        $( "#contactsloader" ).hide();
        $( "#contactslist" ).show();
