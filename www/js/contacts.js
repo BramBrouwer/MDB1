@@ -28,7 +28,7 @@ function onSuccess(contacts)
             
                 if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null){
                         var name = contacts[i].displayName;
-                        var phone = contacts[i].phoneNumbers[0];
+                        var phone = contacts[i].phoneNumbers[0].value;
                         $("#contactslist").append('<li><a href="sms://'+phone+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+name+'</a></li>');
                         $( "#contactslist" ).listview( "refresh" );
          }
