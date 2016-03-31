@@ -30,7 +30,8 @@ function onSuccess(contacts)
         {
             
                 if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null){
-         $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
+        //  $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
+           $("#contactslist").append('<li><a href="sms://'+contacts[i].phoneNumbers[0].value+'">'+contacts[i].displayName+'</a></li>');
          }
       }
             $( "#contactslist" ).listview( "refresh" );
