@@ -28,11 +28,10 @@ function onSuccess(contacts)
         // alert("Contacts found: " + contacts.length)
         for (var i = 0; i < contacts.length; i++) 
         {
-            if(contacts[i].displayName != null)
+            if(contacts[i].name.formatted != null)
             {
-                
                 // $("#contactslist").append('<li><a href="sms://'+contacts[i].phoneNumbers[0]+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+contacts[i].displayName+'</a></li>');
-         $("#contactslist").append('<li>'+contacts[i].displayName+'phonenumber'+ contacts[i].phoneNumbers[0].value+'</li>');
+                $("#contactslist").append('<li>'+contacts[i].name.normatted+'phonenumber'+ contacts[i].phoneNumbers[0].value+'</li>');
             }
             $( "#contactslist" ).listview( "refresh" );
         }
