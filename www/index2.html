@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -9,42 +10,49 @@
         <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-         
-        <!--<title></title>-->
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
     </head>
     
     
-    
 <body> 
-<!--TODO: Seperate pages into seperate html files and figure out navigation-->
+
 <!--Home page-->
-<div data-role="page" id="homepage" data-url="homepage">
-    <div data-role="header">
-    <h1>LoL API test</h1>
-    <a type="button" onclick="getSummonerData('SalamiBami', 'euw')">get name</a>
-  </div>
+<div data-role="page" id="contactspage" data-url="contactspage" data-theme="b">
+   <div data-role="header" data-position="fixed">
+        <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Contacts</b></h1></div>
+    </div>
   
    <div data-role="main" class="ui-content">
-       <div class="name" id="name"></div>
+       
+      <ul id="contactslist" data-sort="true" data-inset="true" data-role="listview" class="ui-listview" data-filter="true" data-autodividers="true"></ul>
+      <button id="loadcontacts">load contacts</button>
+      <!--Loader-->
+            <div class="spinner" id="contactsloader" style="display:none">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div id="dontmindme" class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+          <!--End loader-->
   </div>
 
  
   
 </div> 
-<!--End home page-->
-
-
-
-
+    
 
         <!--Scripts-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="js/API.js"></script>
+        <!--<script type="text/javascript" src="js/api.js"></script>-->
+        <script type="text/javascript" src="js/popups.js"></script>
+        <script type="text/javascript" src="js/api_calls.js"></script>
+        <script type="text/javascript" src="js/calculate_stats.js"></script>
+        <script type="text/javascript" src="js/contacts.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
