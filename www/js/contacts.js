@@ -27,7 +27,7 @@ function onSuccess(contacts)
         for (var i = 0; i < contacts.length; i++) 
         {
             
-                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null)
+                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0].value != null)
                 {
                         var name = contacts[i].displayName;
                         var phone = contacts[i].phoneNumbers[0].value;
@@ -35,6 +35,7 @@ function onSuccess(contacts)
                         $( "#contactslist" ).listview( "refresh" );
                 }      
       }
+      alert("is this called?");
        $( "#contactsloader" ).hide();
        $( "#contactslist" ).show();
 
