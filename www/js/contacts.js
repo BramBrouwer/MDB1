@@ -30,8 +30,7 @@ function onSuccess(contacts)
         {
             
                 if(contacts[i].displayName != null){
-         $("#contactslist").append('<li><a> href="sms://'+contacts[i].phoneNumbers[0].value +'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+contacts[i].displayName+'</a></li>');
-        //  $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
+         $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
          }
       }
             $( "#contactslist" ).listview( "refresh" );
