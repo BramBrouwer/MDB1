@@ -37,6 +37,9 @@ function onSuccess(contacts)
                         //  $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
                         //    $("#contactslist").append('<li><a href="sms://'+contacts[i].phoneNumbers[0].value+'">'+contacts[i].displayName+'</a></li>');
                         $("#contactslist").append('<li><a href="sms://'+phone+'">'+name+'</a></li>');
+                                                $("#contactslist").append('<li><a href="sms://'+"test"+'">'+"test"+'</a></li>');
+                                                
+                                                  $( "#contactslist" ).listview( "refresh" );
          }
       }
             $( "#contactslist" ).listview( "refresh" );
