@@ -4,10 +4,10 @@
 $("#loadcontacts").click(function() {
     
                 $( "#contactslist" ).hide();
-                $( "#contactsloader" ).show();
-                // $("#contactslist").append('<li><a href="sms://+31612345678?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">AAAAATEST</a></li>');
-                // $( "#contactslist" ).listview( "refresh" );
-                // $( "#contactslist" ).show();
+                // $( "#contactsloader" ).show();
+                //  $("#contactslist").append('<li><a href="sms://+31612345678?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">AAAAATEST</a></li>');
+                //  $( "#contactslist" ).listview( "refresh" );
+                //  $( "#contactslist" ).show();
                 
                 var fields = ["displayName", "name","phoneNumbers"];
                 navigator.contacts.find(fields, onSuccess, onError);            
@@ -26,7 +26,6 @@ function onSuccess(contacts)
         // alert("Contacts found: " + contacts.length)
         for (var i = 0; i < contacts.length; i++) 
         {
-            
                 if(contacts[i].displayName != null && contacts[i].phoneNumbers != null && contacts[i].phoneNumbers[0] != null)
                 {
                         var name = contacts[i].displayName;
@@ -35,13 +34,8 @@ function onSuccess(contacts)
                         $( "#contactslist" ).listview( "refresh" );
                 }      
       }
-    //   if this isnt called and there is still a decent amount of contacts, the for loop probablt crashed, mayb ebecause of a nullpointer on phonenumbers? maybe we should perform the nullcheck on the phonenumber object and not the index.
-    
-      alert("is this called?");
        $( "#contactsloader" ).hide();
        $( "#contactslist" ).show();
-
-        
     }
 
 
