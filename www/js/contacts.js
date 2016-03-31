@@ -2,14 +2,14 @@
 //show laoder while loading contacts
 //remove loader and show list on contacts loaded
 $("#loadcontacts").click(function() {
-               
-               
+    
+                $( "#contactslist" ).hide();
                 // $("#contactslist").append('<li><a href="sms://+31612345678?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">AAAAATEST</a></li>');
-              
+                // $( "#contactslist" ).listview( "refresh" );
+                // $( "#contactslist" ).show();
                 
                 var fields = ["displayName", "name","phoneNumbers"];
-                navigator.contacts.find(fields, onSuccess, onError);
-                
+                navigator.contacts.find(fields, onSuccess, onError);            
 
 });
 
@@ -32,6 +32,9 @@ function onSuccess(contacts)
                         $("#contactslist").append('<li><a href="sms://'+phone+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+name+'</a></li>');
                         $( "#contactslist" ).listview( "refresh" );
          }
+         alert("dit wordt uitgevoerd");
+          $( "#contactslist" ).show();
+          
       }
 
         
