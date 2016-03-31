@@ -4,6 +4,7 @@
 $("#loadcontacts").click(function() {
     
                 $( "#contactslist" ).hide();
+                $( "#contactsloader" ).show();
                 // $("#contactslist").append('<li><a href="sms://+31612345678?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">AAAAATEST</a></li>');
                 // $( "#contactslist" ).listview( "refresh" );
                 // $( "#contactslist" ).show();
@@ -26,16 +27,16 @@ function onSuccess(contacts)
         for (var i = 0; i < contacts.length; i++) 
         {
             
-                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null){
+                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null)
+                {
                         var name = contacts[i].displayName;
                         var phone = contacts[i].phoneNumbers[0].value;
                         $("#contactslist").append('<li><a href="sms://'+phone+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+name+'</a></li>');
                         $( "#contactslist" ).listview( "refresh" );
-         }
-         alert("dit wordt uitgevoerd");
-          $( "#contactslist" ).show();
-          
+                }      
       }
+       $( "#contactsloader" ).hide();
+       $( "#contactslist" ).show();
 
         
     }
