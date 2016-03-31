@@ -23,7 +23,8 @@ $("#loadcontacts").click(function() {
 
 function onSuccess(contacts) 
     {
-        // alert("Contacts found: " + contacts.length)
+          //add all the items to an array, sort it and then add it?
+          contacts.sort();
         for (var i = 0; i < contacts.length; i++) 
         {
                 if(contacts[i].displayName != null && contacts[i].phoneNumbers != null && contacts[i].phoneNumbers[0] != null)
