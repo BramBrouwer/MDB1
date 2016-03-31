@@ -24,7 +24,7 @@ $("#loadcontacts").click(function() {
 function onSuccess(contacts) 
     {
           //add all the items to an array, sort it and then add it?
-          contacts.sort();
+          contacts = contacts.sort(cSort);
         for (var i = 0; i < contacts.length; i++) 
         {
                 if(contacts[i].displayName != null && contacts[i].phoneNumbers != null && contacts[i].phoneNumbers[0] != null)
@@ -32,12 +32,21 @@ function onSuccess(contacts)
                         var name = contacts[i].displayName;
                         var phone = contacts[i].phoneNumbers[0].value;
                         $("#contactslist").append('<li><a href="sms://'+phone+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+name+'</a></li>');
-                        $( "#contactslist" ).listview( "refresh" );
+
                 }      
       }
+      
        $( "#contactsloader" ).hide();
+       $( "#contactslist" ).listview( "refresh" );
        $( "#contactslist" ).show();
     }
+    
+    var cSort = function(a, b) 
+{
+  aName = a.dsplayName;
+  bName = b.displayName;
+  return aName < bName ? -1 : (aName == bName ? 0 : 1);
+ };
 
 
             // onError: Failed to get the contacts
