@@ -32,7 +32,7 @@ function onSuccess(contacts)
             {
                 
                 // $("#contactslist").append('<li><a href="sms://'+contacts[i].phoneNumbers[0]+'?body=1V1%20me%20bruh%20www.downloadlinknaaronzeapp.com/">'+contacts[i].displayName+'</a></li>');
-         $("#contactslist").append('<li> displayname: '+contacts[i].displayName+" name: "+contacts[i].name+'</li>');
+         $("#contactslist").append('<li>'+contacts[i].displayName+'phonenumber'+ contacts[i].phoneNumbers[0].value+'</li>');
             }
             $( "#contactslist" ).listview( "refresh" );
         }
