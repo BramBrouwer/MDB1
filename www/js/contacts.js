@@ -29,7 +29,7 @@ function onSuccess(contacts)
         for (var i = 0; i < contacts.length; i++) 
         {
             
-                if(contacts[i].displayName != null){
+                if(contacts[i].displayName != null && contacts[i].phoneNumbers[0] != null){
          $("#contactslist").append('<li> displayname: '+contacts[i].displayName+'</li>');
          }
       }
