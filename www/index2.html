@@ -13,20 +13,18 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
     </head>
     
-    
 <body> 
-
-<!--Home page-->
+<!--Contacts page-->
 <div data-role="page" id="contactspage" data-url="contactspage" data-theme="b">
+  
    <div data-role="header" data-position="fixed">
         <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Contacts</b></h1></div>
     </div>
   
-   <div data-role="main" class="ui-content">
-       
+   <div data-role="main" class="ui-content"> 
       <ul id="contactslist" data-sort="true" data-inset="true" data-role="listview" class="ui-listview" data-filter="true" data-autodividers="true"></ul>
       <button id="loadcontacts">load contacts</button>
-      <!--Loader-->
+            <!--Loader-->
             <div class="spinner" id="contactsloader" style="display:none">
                 <div class="rect1"></div>
                 <div class="rect2"></div>
@@ -34,11 +32,8 @@
                 <div class="rect4"></div>
                 <div class="rect5"></div>
             </div>
-          <!--End loader-->
+            <!--End loader-->
   </div>
-
- 
-  
 </div> 
     
 
@@ -47,7 +42,6 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-        <!--<script type="text/javascript" src="js/api.js"></script>-->
         <script type="text/javascript" src="js/popups.js"></script>
         <script type="text/javascript" src="js/api_calls.js"></script>
         <script type="text/javascript" src="js/calculate_stats.js"></script>
