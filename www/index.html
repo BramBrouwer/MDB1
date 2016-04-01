@@ -16,7 +16,7 @@
     
 <body> 
   <!--Home page-->
-  <div data-role="page" id="homepage" data-theme="b" data-url="homepage">
+  <div data-role="page" id="homepage" data-theme="b" >
    
     <div data-role="header" data-position="fixed">
         <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Lol compare</b></h1></div>
@@ -27,8 +27,8 @@
     <p>Enter 2 names to compare:</p>
    
         <form id="target" action="">
-            <input type="text" id="s1" name="s1" value="salamibami" placeholder="Summoner name..." />
-            <input type="text" id="s2" name="s2" value="henksteentjes" placeholder="Summoner name..." />
+            <input type="text" id="s1" name="s1"  placeholder="Summoner name..." />
+            <input type="text" id="s2" name="s2"  placeholder="Summoner name..." />
             <input type="submit" value="Next" />
         </form>
                     
@@ -86,7 +86,7 @@
             </tr>
         </tbody>
     </table>
-         
+    
   </div>
   
   <div data-role="footer" data-position="fixed" class="ui-bar"  data-theme="b">
@@ -110,6 +110,7 @@
         <script type="text/javascript" src="js/calculate_stats.js"></script>
         <script type="text/javascript" src="js/contacts.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
+        <script type="text/javascript" src="js/localstorage.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>

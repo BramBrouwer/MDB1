@@ -13,8 +13,6 @@ $(document).on("pageinit","#contactspage", function(){
 
 
 
-
-
 function onSuccess(contacts) 
     {
         for (var i = 0; i < contacts.length; i++) 
