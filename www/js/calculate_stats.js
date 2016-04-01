@@ -133,7 +133,7 @@ function redrawScore(){
     }
 }
 
-$('tbody tr').on('touchstart', function(){
+$('tbody tr').on('tap', function(){
     console.log('test');
     var row = $(this);
     var sum1cell = row.find('td.sum1');

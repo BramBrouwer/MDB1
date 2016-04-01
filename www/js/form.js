@@ -1,4 +1,3 @@
-
 //Function variables
 var baseURL = 'https://euw.api.pvp.net';
 var APIKey = 'api_key=15dfe91d-08ef-4fc9-a622-8d76c79c1ec5';
