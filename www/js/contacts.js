@@ -10,9 +10,22 @@ $(document).on("pageinit","#contactspage", function(){
 });
     
 });
+$(document).on("pageinit","#homepage", function(){
+  $("#savelocal").tap(function() {
+      console.log("tap");
+      window.localStorage.setItem("saved_name_a", "Henksteentjes");
+      window.localStorage.setItem("saved_name_b", "Salamibami");
+      console.log("names saved");
+        
+});
 
+$("#loadlocal").tap(function() {
+      var a = window.localStorage.getItem("saved_name_a");
+      var b = window.localStorage.getItem("saved_name_b");
+      alert(a+b);
+});
 
-
+});
 
 
 function onSuccess(contacts) 
