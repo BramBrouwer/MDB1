@@ -1,14 +1,9 @@
 $("#loadcontacts").tap(function() {
-             
-});
-
-$( document ).on( "pageshow", "#contactspage", function( event ) {
-//    $("#loadcontacts").hide();
-alert('dsa');
+    $("#loadcontacts").hide();
     $( "#contactslist" ).hide();
     $( "#contactsloader" ).show();
     var fields = ["displayName", "name","phoneNumbers"];
-    navigator.contacts.find(fields, onSuccess, onError);  
+    navigator.contacts.find(fields, onSuccess, onError);            
 });
 
 
