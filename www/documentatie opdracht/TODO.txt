@@ -2,12 +2,16 @@
 http://cordova.apache.org/docs/en/latest/cordova/events/events.html
 
 TODO:
--add sort functie aan contacts, contacts meteen inladen ipv met een knop
+
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
--Performance check mbv laatste slides
--rubrix doornemen
 -foutmelding bij geen internet
-Nice to have:
--season kiezen
--region kiezen
--ranked of normal kiezen
+-gekke navigatie tussen contactenpagina fixen CONTROLEER MANIER VAN NAVIFATIE TUSSEN PAGINAS
+
+
+nice to do:
+-add sort functie aan contacts, contacts meteen inladen ipv met een knop
+
+
+vragen:
+witte flitsen tussen paginas, iets aan te doen?
+waarom werken pageinit en pageload niet 

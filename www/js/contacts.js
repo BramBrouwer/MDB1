@@ -1,3 +1,4 @@
+// ik heb geprobeerd dit op een event van jquery mobile uit te voeren zoals page init maar het werkte niet
 $("#loadcontacts").tap(function() {
     $("#loadcontacts").hide();
     $( "#contactslist" ).hide();
