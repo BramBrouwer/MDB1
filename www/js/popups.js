@@ -1,6 +1,7 @@
 
 var sites = 
-["http://ducksarethebest.com/",
+[
+"http://ducksarethebest.com/",
 "http://www.staggeringbeauty.com/",
 "http://beesbeesbees.com/",
 "http://www.koalastothemax.com/",
@@ -8,7 +9,8 @@ var sites =
 "http://iamawesome.com/",
 "http://www.nullingthevoid.com/",
 "http://www.wwwdotcom.com/",
-"http://unicodesnowmanforyou.com/"]
+"http://unicodesnowmanforyou.com/"
+];
 
 
 function getRandomInt() {
@@ -16,12 +18,12 @@ function getRandomInt() {
 }
 
 $( "#header_icon" ).on( "tap", function( event ) {
-       var ref = window.open('http://leagueoflegends.com', '_blank', 'location=yes');
+    var ref = window.open('http://leagueoflegends.com', '_blank', 'location=yes');
 })
 
 $( "#dontmindme" ).on( "tap", function( event ) {
-       var ref = window.open(sites[getRandomInt()], '_blank', 'location=yes');
-    })
+    var ref = window.open(sites[getRandomInt()], '_blank', 'location=yes');
+})
 
 
 
@@ -29,7 +31,7 @@ function errorpopup(invalidName)
 {
     $("#popupcontent").empty();
     $("#popupcontent").append('Invalid username: '+invalidName)
-     $( "#name_error" ).popup( "open");
+    $( "#name_error" ).popup( "open");
 }
 
 function empty_name_error()
