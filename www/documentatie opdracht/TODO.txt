@@ -5,7 +5,6 @@ TODO:
 
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
 -foutmelding bij geen internet
--gekke navigatie tussen contactenpagina fixen CONTROLEER MANIER VAN NAVIFATIE TUSSEN PAGINAS
 
 
 nice to do:
@@ -13,6 +12,4 @@ nice to do:
 
 
 vragen:
-witte flitsen tussen paginas, iets aan te doen?
 waarom werken pageinit en pageload niet 
-navigatie tussen verschillende pages in meerdere html files met javascipt en transitions intact

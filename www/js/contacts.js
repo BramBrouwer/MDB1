@@ -1,4 +1,6 @@
-$("#loadcontacts").tap(function() {
+$(document).on("pageinit","#contactspage", function(){
+    
+    $("#loadcontacts").tap(function() {
     console.log("asdasd");
     $("#loadcontacts").hide();
     $( "#contactslist" ).hide();
@@ -6,6 +8,11 @@ $("#loadcontacts").tap(function() {
     var fields = ["displayName", "name","phoneNumbers"];
     navigator.contacts.find(fields, onSuccess, onError);            
 });
+    
+});
+
+
+
 
 
 function onSuccess(contacts) 
