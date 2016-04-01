@@ -15,3 +15,4 @@ nice to do:
 vragen:
 witte flitsen tussen paginas, iets aan te doen?
 waarom werken pageinit en pageload niet 
+navigatie tussen verschillende pages in meerdere html files met javascipt en transitions intact
