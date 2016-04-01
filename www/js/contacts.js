@@ -1,5 +1,5 @@
-// ik heb geprobeerd dit op een event van jquery mobile uit te voeren zoals page init maar het werkte niet
 $("#loadcontacts").tap(function() {
+    console.log("asdasd");
     $("#loadcontacts").hide();
     $( "#contactslist" ).hide();
     $( "#contactsloader" ).show();
