@@ -1,5 +1,5 @@
 $(document).on("pageinit","#contactspage", function(){
-    
+   
     $("#loadcontacts").tap(function() {
     console.log("asdasd");
     $("#loadcontacts").hide();

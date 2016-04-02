@@ -2,7 +2,6 @@
 http://cordova.apache.org/docs/en/latest/cordova/events/events.html
 
 TODO:
-
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
 -foutmelding bij geen internet
 

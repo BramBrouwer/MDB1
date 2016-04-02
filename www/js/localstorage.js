@@ -1,6 +1,3 @@
-
-
-
 $(document).on("pageinit","#homepage", function(){
 
 // Load previously entered values from local storage
