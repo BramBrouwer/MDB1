@@ -10,7 +10,6 @@ var sites =
 "http://www.wwwdotcom.com/",
 "http://unicodesnowmanforyou.com/"]
 
-
 function getRandomInt() {
     return Math.floor(Math.random() * (8 - 0 + 1)) + 0;
 }
@@ -28,15 +27,38 @@ $( "#dontmindme" ).on( "tap", function( event ) {
 function errorpopup(invalidName)
 {
     $("#popupcontent").empty();
-    $("#popupcontent").append('Invalid username: '+invalidName)
+    var a = window.localStorage.getItem("pref_lang");
+   
+   switch(a) {
+    case null:
+        $("#popupcontent").append('Invalid username: '+invalidName)
+        break;
+    case "eng":
+        $("#popupcontent").append('Invalid username: '+invalidName)
+        break;
+    case "nl":
+        $("#popupcontent").append('Ongeldige gebruikersnaam: '+invalidName)
+   }
      $( "#name_error" ).popup( "open");
 }
 
 function empty_name_error()
 {
     $("#popupcontent").empty();
-    $("#popupcontent").append('Please enter both fields');
-    $( "#name_error" ).popup( "open");
+   
+    var a = window.localStorage.getItem("pref_lang");
+   
+   switch(a) {
+    case null:
+        $("#popupcontent").append('Please enter both fields');
+        break;
+    case "eng":
+        $("#popupcontent").append('Please enter both fields');
+        break;
+    case "nl":
+        $("#popupcontent").append('Vul aub beide namen in');
+   }
+     $( "#name_error" ).popup( "open");
 }
 
 
