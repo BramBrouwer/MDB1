@@ -1,8 +1,8 @@
 
 
-$(document).on("pageinit","#homepage", function(){
-  
-  var a = window.localStorage.getItem("pref_language");
+$(document).on("pagebeforeshow","#homepage", function(){
+  console.log("homepage before show called");
+  var a = window.localStorage.getItem("pref_lang");
    
    switch(a) {
     case null:
@@ -16,9 +16,9 @@ $(document).on("pageinit","#homepage", function(){
    }
 });
 
-$(document).on("pageinit","#contactspage", function(){
+$(document).on("pagebeforeshow","#contactspage", function(){
     
-   var a = window.localStorage.getItem("pref_language");
+   var a = window.localStorage.getItem("pref_lang");
    
    switch(a) {
     case null:
@@ -40,7 +40,7 @@ function homepage_eng(){
   {
     home_compare: "Enter 2 names to compare",
     placeholder:  "Summoner name...",
-    challenge_button: "Challenge a friend"
+    challenge_button: "Challenge a friend",
   };
     // Set text
     $("#home_compare").text(eng_strings.home_compare);
@@ -55,7 +55,7 @@ function homepage_nl(){
     {
     home_compare: "Vul 2 namen in om te vergelijken",
     placeholder:  "Summoner naam...",
-    challenge_button: "Daag een vriend uit"
+    challenge_button: "Daag een vriend uit",
     };
     // Set text
     $("#home_compare").text(nl_strings.home_compare);
