@@ -2,6 +2,7 @@
 http://cordova.apache.org/docs/en/latest/cordova/events/events.html
 
 TODO:
+-popups ook aanpassen aan taal
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
 -foutmelding bij geen internet
 
@@ -10,5 +11,3 @@ nice to do:
 -add sort functie aan contacts, contacts meteen inladen ipv met een knop
 
 
-vragen:
-waarom werken pageinit en pageload niet 
