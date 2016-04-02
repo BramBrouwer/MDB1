@@ -1,27 +1,27 @@
-<div data-role="page" id="contactspage" data-theme="b">
+<div data-role="page" id="settingspage" data-theme="b">
   
     <div data-role="header">
         <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Settings</b></h1></div>
     </div>
   
     <div data-role="main" class="ui-content">
-        <form action="saveSettings()">
+        <form id="settingsform" onsubmit="javascript:saveSettings()">
             <div>
                 <div class="colors" data-role="collapsible" data-iconpos="none">
                     <h3>Theme Color</h3>
-                    <fieldset data-role="controlgroup">
+                    <fieldset name="colors" data-role="controlgroup">
                         <input name="colors" type="radio" id="day">
                         <label for="day">Day</label>
                         <input name="colors" type="radio" id="night">
                         <label for="night">Night</label>
                     <fieldset> 
                 </div>
-                <div class="region" data-role="collapsible" data-iconpos="none">
+                
+                <div class="regionlist" data-role="collapsible" data-iconpos="none">
                     <h3>Region</h3>
-                    <div data-role="fieldcontain">
-                        <select class="region-list">    
+                    <div data-role="fieldcontain">                        <select name="regionlist" id="regionlist">
                             <option name="region" value="na">
-                                    North America
+                                North America
                             </option>
                                 
                             <option name="region" value="euw">
@@ -66,6 +66,17 @@
                         </select>
                     </div>
                 </div>
+                
+                <div class="lang" data-role="collapsible" data-iconpos="none">
+                    <h3>Language</h3>
+                    <fieldset name="lang" data-role="controlgroup">
+                        <input name="lang" type="radio" id="eng">
+                        <label for="eng">English</label>
+                        <input name="lang" type="radio" id="nl">
+                        <label for="nl">Nederlands</label>
+                    <fieldset> 
+                </div>
+                
             </div>
             <button type="submit">Opslaan</button>
         </form>
