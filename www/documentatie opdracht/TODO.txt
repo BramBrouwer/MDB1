@@ -1,10 +1,6 @@
-Deadline - 3 april
-http://cordova.apache.org/docs/en/latest/cordova/events/events.html
 
 TODO:
--popups ook aanpassen aan taal
 - Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
--foutmelding bij geen internet
 
 
 nice to do:
