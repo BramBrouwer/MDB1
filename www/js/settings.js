@@ -37,14 +37,34 @@ $(document).on("pagebeforeshow","#settingspage", function(){
     }
 
 })
-    function saveSettings(){
-        var form = $('form#settingsform');
-        var color =  form.find('input[name=colors]:checked').attr('id');
-        var region = form.find('option[name=region]:selected').attr('value');
-        var lang =  form.find('input[name=lang]:checked').attr('id');
+$(document).on("pagebeforechange", "#settingspage", function(){
+    changeTheme();
+})
+
+function saveSettings(){
+    var form = $('form#settingsform');
+    var color =  form.find('input[name=colors]:checked').attr('id');
+    var region = form.find('option[name=region]:selected').attr('value');
+    var lang =  form.find('input[name=lang]:checked').attr('id');
         
-        window.localStorage.setItem("pref_color", color);
-        window.localStorage.setItem("pref_region", region);
-        window.localStorage.setItem("pref_lang", lang);
-        $('#regionlist').selectmenu('refresh');
+    window.localStorage.setItem("pref_color", color);
+    window.localStorage.setItem("pref_region", region);
+    window.localStorage.setItem("pref_lang", lang);
+    $('#regionlist').selectmenu('refresh');
+}
+
+function changeTheme(){
+    var theme = window.localStorage.getItem("pref_color");
+    switch(theme){
+        default:
+            $('#settingspage').attr('data-theme', 'b');
+            break;
+        case 'day':
+             $('#settingspage').attr('data-theme', 'a');
+            break;
+        case 'night':
+            $('#settingspage').attr('data-theme', 'b');
+            break;
     }
+    return $('#settingspage');
+}

@@ -1,4 +1,4 @@
-<div data-role="page" id="settingspage" data-theme="b">
+<div data-role="page" id="settingspage">
   
     <div data-role="header">
         <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Settings</b></h1></div>
@@ -8,7 +8,7 @@
         <form id="settingsform" onsubmit="javascript:saveSettings()">
             <div>
                 <div class="colors" data-role="collapsible" data-iconpos="none">
-                    <h3>Theme Color</h3>
+                    <h3 id="themetext">Theme Color</h3>
                     <fieldset name="colors" data-role="controlgroup">
                         <input name="colors" type="radio" id="day">
                         <label for="day">Day</label>
@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="regionlist" data-role="collapsible" data-iconpos="none">
-                    <h3>Region</h3>
+                    <h3 id="regiontext">Region</h3>
                     <div data-role="fieldcontain">
                         <select name="regionlist" id="regionlist">
                             <option name="region" value="na">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 
-                <div class="lang" data-role="collapsible" data-iconpos="none">
+                <div id="langtext" class="lang" data-role="collapsible" data-iconpos="none">
                     <h3>Language</h3>
                     <fieldset name="lang" data-role="controlgroup">
                         <input name="lang" type="radio" id="eng">
@@ -79,7 +79,7 @@
                 </div>
                 
             </div>
-            <button type="submit">Opslaan</button>
+            <button id="settingssavetext" type="submit">Opslaan</button>
         </form>
     </div>
 

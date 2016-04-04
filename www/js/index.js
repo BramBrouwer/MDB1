@@ -23,6 +23,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        setTheme('#homepage');
     },
     // Bind Event Listeners
     //
@@ -52,4 +53,17 @@ var app = {
     
 };
 
-
+function setTheme(page){
+    var theme = window.localStorage.getItem("pref_color");
+    switch(theme){
+        default:
+            $(page).attr('data-theme', 'b');
+            break;
+        case 'day':
+             $(page).attr('data-theme', 'a');
+            break;
+        case 'night':
+            $(page).attr('data-theme', 'b');
+            break;
+    }
+}

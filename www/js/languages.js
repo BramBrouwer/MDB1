@@ -3,7 +3,6 @@
 $(document).on("pagebeforeshow","#homepage", function(){
   console.log("homepage before show called");
   var a = window.localStorage.getItem("pref_lang");
-   
    switch(a) {
     case null:
         homepage_eng();
@@ -32,6 +31,21 @@ $(document).on("pagebeforeshow","#contactspage", function(){
    }
 });
 
+$(document).on("pagebeforeshow","#settingspage", function(){
+    
+   var a = window.localStorage.getItem("pref_lang");
+   
+   switch(a) {
+    case null:
+        settings_eng();
+        break;
+    case "eng":
+        settings_eng();
+        break;
+    case "nl":
+        settings_nl();
+   }
+});
 
 
 function homepage_eng(){
@@ -94,4 +108,35 @@ function contacts_nl(){
    $("#contacts_header").text(nl_strings.header);
    $("#back_button").text(nl_strings.back_button);
    $("#loadcontacts").text(nl_strings.contacts_button);
+}
+
+function settings_nl(){
+    var nl_strings = 
+    {
+        theme: 'Thema',
+        day:    'Dag',
+        night:  'Nacht',
+        region: 'Regio',
+        language: 'Taal',
+    }
+    $('label[for=day]').text(nl_strings.day);
+    $('label[for=night]').text(nl_strings.night);
+    $('#themetext a').text(nl_strings.theme);
+    $('#regiontext a').text(nl_strings.region);
+    $('#langtext a').text(nl_strings.language);
+}
+function settings_eng(){
+    var eng_strings = 
+    {
+        theme: 'Theme',
+        day:    'Day',
+        night:  'Night',
+        region: 'Region',
+        language: 'Language',
+    }
+    $('label[for=day]').text(nl_strings.day);
+    $('label[for=night]').text(nl_strings.night);
+    $('#themetext a').text(eng_strings.theme);
+    $('#regiontext a').text(eng_strings.region);
+    $('#langtext a').text(eng_strings.language);
 }
