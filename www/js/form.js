@@ -1,7 +1,7 @@
 //Function variables
 var baseURL = 'https://euw.api.pvp.net';
 var APIKey = 'api_key=15dfe91d-08ef-4fc9-a622-8d76c79c1ec5';
-var region ='euw';
+var region = (window.localStorage.getItem('pref_region') === undefined) ? 'euw' : x;
 var typeURL = '';
 var name1 = '';
 var name2 = '';

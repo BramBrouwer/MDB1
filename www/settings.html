@@ -1,24 +1,24 @@
-<div data-role="page" id="settingspage">
+<div data-role="page" id="settingspage" class="pagebody">
   
     <div data-role="header">
-        <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Settings</b></h1></div>
+        <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1 id="headertext"><b>Settings</b></h1></div>
     </div>
   
     <div data-role="main" class="ui-content">
         <form id="settingsform" onsubmit="javascript:saveSettings()">
             <div>
                 <div class="colors" data-role="collapsible" data-iconpos="none">
-                    <h3 id="themetext">Theme Color</h3>
+                    <h3 id="themetext"></h3>
                     <fieldset name="colors" data-role="controlgroup">
                         <input name="colors" type="radio" id="day">
-                        <label for="day">Day</label>
+                        <label for="day"></label>
                         <input name="colors" type="radio" id="night">
-                        <label for="night">Night</label>
+                        <label for="night"></label>
                     <fieldset> 
                 </div>
                 
                 <div class="regionlist" data-role="collapsible" data-iconpos="none">
-                    <h3 id="regiontext">Region</h3>
+                    <h3 id="regiontext"></h3>
                     <div data-role="fieldcontain">
                         <select name="regionlist" id="regionlist">
                             <option name="region" value="na">
@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 
-                <div id="langtext" class="lang" data-role="collapsible" data-iconpos="none">
-                    <h3>Language</h3>
+                <div class="lang" data-role="collapsible" data-iconpos="none">
+                    <h3 id="langtext"></h3>
                     <fieldset name="lang" data-role="controlgroup">
                         <input name="lang" type="radio" id="eng">
                         <label for="eng">English</label>
@@ -79,12 +79,12 @@
                 </div>
                 
             </div>
-            <button id="settingssavetext" type="submit">Opslaan</button>
+            <button id="settingssavetext" type="submit"></button>
         </form>
     </div>
 
     <div data-role="footer" data-position="fixed" class="ui-bar">
-        <a  href="index.html" data-transition="pop"  class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+        <a  id="settingsbacktext" href="index.html" data-transition="pop"  class="ui-btn ui-icon-back ui-btn-icon-left"></a>
     </div>
 
 </div>

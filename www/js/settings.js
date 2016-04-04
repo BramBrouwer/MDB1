@@ -37,9 +37,6 @@ $(document).on("pagebeforeshow","#settingspage", function(){
     }
 
 })
-$(document).on("pagebeforechange", "#settingspage", function(){
-    changeTheme();
-})
 
 function saveSettings(){
     var form = $('form#settingsform');
@@ -51,20 +48,50 @@ function saveSettings(){
     window.localStorage.setItem("pref_region", region);
     window.localStorage.setItem("pref_lang", lang);
     $('#regionlist').selectmenu('refresh');
+    return false;   
 }
 
-function changeTheme(){
+// Update data theme
+$(document).on("pagebeforechange", function () {
     var theme = window.localStorage.getItem("pref_color");
     switch(theme){
         default:
-            $('#settingspage').attr('data-theme', 'b');
+            $.mobile.changeGlobalTheme('b');
             break;
         case 'day':
-             $('#settingspage').attr('data-theme', 'a');
+            $.mobile.changeGlobalTheme('a');
             break;
         case 'night':
-            $('#settingspage').attr('data-theme', 'b');
+            $.mobile.changeGlobalTheme('b');
             break;
     }
-    return $('#settingspage');
-}
+    
+});
+
+	$.mobile.changeGlobalTheme = function (theme) {
+		// These themes will be cleared, add more
+		// swatch letters as needed.
+		var themes = " a b";
+
+		// Updates the theme for all elements that match the
+		// CSS selector with the specified theme class.
+		function setTheme(cssSelector, themeClass, theme) {
+			$(cssSelector)
+			.removeClass(themes.split(" ").join(" " + themeClass + "-"))
+			.addClass(themeClass + "-" + theme)
+			.attr("data-theme", theme);
+		}
+
+		// Add more selectors/theme classes as needed.
+		setTheme(".ui-mobile-viewport", "ui-overlay", theme);
+		setTheme("[data-role='page']", "ui-body", theme);
+        setTheme("[data-role='main']", "ui-body", theme);
+		setTheme("[data-role='header']", "ui-bar", theme);
+		setTheme("[data-role='listview'] > li", "ui-bar", theme);
+        setTheme("[data-role='collapsible']", "ui-collapsible", theme);
+		setTheme("[data-role='controlgroup'] > li", "ui-bar", theme);
+		setTheme(".ui-btn", "ui-btn-up", theme);
+		setTheme(".ui-btn", "ui-btn-hover", theme);
+	};
+
+// Update data theme
