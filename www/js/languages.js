@@ -41,12 +41,14 @@ function homepage_eng(){
     home_compare: "Enter 2 names to compare",
     placeholder:  "Summoner name...",
     challenge_button: "Challenge a friend",
+    settings_button: 'Settings'
   };
     // Set text
     $("#home_compare").text(eng_strings.home_compare);
     $("#s1").attr("placeholder", eng_strings.placeholder);
     $("#s2").attr("placeholder", eng_strings.placeholder);
     $("#challenge_button").text(eng_strings.challenge_button);
+    $("#settings_button").text(eng_strings.settings_button);
 }
 
 function homepage_nl(){
@@ -56,12 +58,14 @@ function homepage_nl(){
     home_compare: "Vul 2 namen in om te vergelijken",
     placeholder:  "Summoner naam...",
     challenge_button: "Daag een vriend uit",
+    settings_button: 'Instellingen'
     };
     // Set text
     $("#home_compare").text(nl_strings.home_compare);
     $("#s1").attr("placeholder", nl_strings.placeholder);
     $("#s2").attr("placeholder", nl_strings.placeholder);
     $("#challenge_button").text(nl_strings.challenge_button);
+    $("#settings_button").text(nl_strings.settings_button);
 }
 
 function contacts_eng(){
