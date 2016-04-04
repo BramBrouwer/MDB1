@@ -18,18 +18,15 @@ $('#target').submit(function() {
     // Disable button to prevent the user breaking stuff
     $('input[type="submit"]').prop('disabled', true);
  
-     if(name1 == "" || name2 == "")
+    //validate names and retrieve stats if names are valid
+    verifySummoners(name1,name2);
+    
+    if(name1 == "" || name2 == "")
     {
-        $('#loader').hide();
         empty_name_error();
         $('input[type="submit"]').prop('disabled', false);
         return false;
     }
- 
-    //validate names and retrieve stats if names are valid
-    verifySummoners(name1,name2);
-    
-   
     return false;
 });
 
