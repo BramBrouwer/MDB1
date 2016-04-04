@@ -1,24 +1,25 @@
 <div data-role="page" id="settingspage" data-theme="b">
   
     <div data-role="header">
-        <div> <img src="icon.png" id="header_icon" class="header_icon"></img> <h1><b>Settings</b></h1></div>
+        <div> <img src="icon.png" id="header_icon" class="header_icon"></img><b> <h1 id="settings_header"></b></h1></div>
     </div>
   
     <div data-role="main" class="ui-content">
         <form id="settingsform" onsubmit="javascript:saveSettings()">
             <div>
                 <div class="colors" data-role="collapsible" data-iconpos="none">
-                    <h3>Theme Color</h3>
+                    <h3 id="settings_theme"></h3>
+
                     <fieldset name="colors" data-role="controlgroup">
                         <input name="colors" type="radio" id="day">
-                        <label for="day">Day</label>
+                        <label id="theme_day" for="day"></label>
                         <input name="colors" type="radio" id="night">
-                        <label for="night">Night</label>
+                        <label id="theme_night" for="night"></label>
                     <fieldset> 
                 </div>
                 
                 <div class="regionlist" data-role="collapsible" data-iconpos="none">
-                    <h3>Region</h3>
+                    <h3 id="settings_region"></h3>
                     <div data-role="fieldcontain">
                         <select name="regionlist" id="regionlist">
                             <option name="region" value="na">
@@ -69,7 +70,7 @@
                 </div>
                 
                 <div class="lang" data-role="collapsible" data-iconpos="none">
-                    <h3>Language</h3>
+                    <h3 id="settings_language"></h3>
                     <fieldset name="lang" data-role="controlgroup">
                         <input name="lang" type="radio" id="eng">
                         <label for="eng">English</label>
@@ -79,12 +80,12 @@
                 </div>
                 
             </div>
-            <button type="submit">Opslaan</button>
+            <button id="settings_submit" type="submit">Opslaan</button>
         </form>
     </div>
 
     <div data-role="footer" data-position="fixed" class="ui-bar">
-        <a  href="index.html" data-transition="pop"  class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+        <a id="settings_back_button" href="index.html" data-transition="pop"  class="ui-btn ui-icon-back ui-btn-icon-left"></a>
     </div>
 
 </div>
