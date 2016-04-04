@@ -17,6 +17,7 @@ function verifySummoners(){
                 {   //Second name verified
                     sum2 = data2;
                     $('input[type="submit"]').prop('disabled', false);
+                    //$( ":mobile-pagecontainer" ).pagecontainer( "change", "compare.html", { role: "page" } );
                     console.log(sum1, sum2);
                     getStatsNormal(sum1,sum2);
                 },
@@ -37,7 +38,6 @@ function verifySummoners(){
             $('#loader').hide();
             errorpopup(name1);
             $('input[type="submit"]').prop('disabled', false);
-            
         }      
     });
 }
