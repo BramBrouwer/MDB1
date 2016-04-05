@@ -1,8 +1,16 @@
 function verifySummoners(){
     var sum1;
     var sum2;
+    
+    var region = window.localStorage.getItem('pref_region');
+    if(region == undefined){
+        console.log('region is undefined');
+        region = 'euw';
+    }
+
     var typeURL1 = '/api/lol/' + region + '/v1.4/summoner/by-name/' + name1 +'?' +APIKey;
     var typeURL2 = '/api/lol/' + region + '/v1.4/summoner/by-name/' + name2 +'?' +APIKey;
+    
 
    //first ajax call, verify the first summoner name given
     $.ajax({
@@ -18,7 +26,7 @@ function verifySummoners(){
                     sum2 = data2;
                     $('input[type="submit"]').prop('disabled', false);
                     console.log(sum1, sum2);
-                    getStatsNormal(sum1,sum2);
+                    getStatsNormal(sum1,sum2,region);
                 },
                 //Second name 404
                 error : function(error)
@@ -46,7 +54,7 @@ function verifySummoners(){
 
 
 
-function getStatsNormal(sum1,sum2){
+function getStatsNormal(sum1,sum2,region){
    
     var summoner1stats;
     var summoner2stats;
