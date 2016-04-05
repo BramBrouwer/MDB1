@@ -57,12 +57,15 @@ $(document).on("pagebeforechange", function () {
     switch(theme){
         default:
             $.mobile.changeGlobalTheme('b');
+            $('.stats_table').removeClass('day').addClass('night');
             break;
         case 'day':
             $.mobile.changeGlobalTheme('a');
+            $('.stats_table').removeClass('night').addClass('day');
             break;
         case 'night':
             $.mobile.changeGlobalTheme('b');
+            $('.stats_table').removeClass('day').addClass('night');
             break;
     }
     
