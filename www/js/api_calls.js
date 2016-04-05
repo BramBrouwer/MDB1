@@ -1,4 +1,4 @@
-function verifySummoners(region){
+function verifySummoners(){
     var sum1;
     var sum2;
     var typeURL1 = '/api/lol/' + region + '/v1.4/summoner/by-name/' + name1 +'?' +APIKey;
