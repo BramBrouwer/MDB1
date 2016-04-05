@@ -1,9 +1,0 @@
-
-TODO:
-- Het ID van je app moet gelijk zijn aan: nl.avans.mbd1.s + {studentnummer}
-
-
-nice to do:
--add sort functie aan contacts, contacts meteen inladen ipv met een knop
-
-

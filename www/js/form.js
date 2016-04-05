@@ -6,17 +6,17 @@ var name1 = '';
 var name2 = '';
 
 $('#target').submit(function() {
-    // StatusBar.show();
-    // StatusBar.backgroundColorByName("red");
+   
+     // Disable button to prevent the user breaking stuff
+    $('input[type="submit"]').prop('disabled', true);
+ 
     $('.stats_table').hide();
     $('#loader').show();
     resetScore();
     name1 = $('input[name="s1"]').val().toLowerCase();
     name2 = $('input[name="s2"]').val().toLowerCase();
     
-    // Disable button to prevent the user breaking stuff
-    $('input[type="submit"]').prop('disabled', true);
- 
+  
      if(name1 == "" || name2 == "")
     {
         $('#loader').hide();
